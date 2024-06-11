@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+    </style>
+  </head>
+  <body>
+    <div class="Top-Container" id="Top-Container">
+      <p class="left lobster" onclick="Top()">Joe's</p>
+      <div class="Top-btn right"> 
+        <div class="tabs">
+          <div class="lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <div class="tab">
+            <p class="underline" onclick="ScrollDown(`contact`)">Contact</p>
+            <p class="underline" onclick="ScrollDown(`menu`)">Menu</p>
+            <p class="underline">Order</p>
+          </div>
+        </div>
+        <p class="underline p" onclick="ScrollDown(`contact`)">Contact</p>
+        <p class="underline p" onclick="ScrollDown(`menu`)">Menu</p>
+        <p class="underline p" onclick="openNewTab(`shopping.html`)">Order</p>
+      </div>
+    </div>
+    <div class="header">
+      <div class="headertext AbCenter">
+        <h1>Joe's Pizza</h1>
+      </div>
+      <img src="images/header.jpg" alt="" />
+
+      <div class="down"><div onclick="ScrollDown('main')"></div></div>
+    </div>
+    <main id="main">
+      <div class="products">
+        <h2 class="lobster">Pizzas</h2>
+        <div class="product left-product">
+          <img src="images/pizzas/pizza1.png" alt="" />
+        </div>
+        <div class="product middle-product">
+          <img src="images/pizzas/pizza2.png" alt="" />
+        </div>
+        <div class="product right-product">
+          <img src="images/pizzas/pizza3.png" alt="" />
+        </div>
+      </div>
+      <div class="menu-section" id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-items">
+          <div class="menu-item">
+            <h3>Margherita</h3>
+            <p>Tomato, mozzarella, and basil</p>
+            <p class="price">$8.99</p>
+          </div>
+          <div class="menu-item">
+            <h3>Pepperoni</h3>
+            <p>Pepperoni, mozzarella, and tomato sauce</p>
+            <p class="price">$9.99</p>
+          </div>
+          <div class="menu-item">
+            <h3>BBQ Chicken</h3>
+            <p>Chicken, BBQ sauce, and red onions</p>
+            <p class="price">$10.99</p>
+          </div>
+          <div class="menu-item">
+            <h3>Vegetarian</h3>
+            <p>Bell peppers, olives, and mushrooms</p>
+            <p class="price">$9.49</p>
+          </div>
+          <div class="menu-item">
+            <h3>Hawaiian</h3>
+            <p>Ham, pineapple, and mozzarella</p>
+            <p class="price">$10.49</p>
+          </div>
+          <div class="menu-item">
+            <h3>Meat Lovers</h3>
+            <p>Pepperoni, sausage, ham, and bacon</p>
+            <p class="price">$11.49</p>
+          </div>
+        </div>
+      </div>
+      <div class="location">
+        <div class="location-text">
+          <h2>Location</h2>
+          <p>123 Sty Street</p>
+          <p>New York</p>
+          <img src="images/pizza-3007395_1920.jpg" alt="" />
+        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d12097.51610115587!2d-74.01179407871409!3d40.70967195384477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1spizza%20new%20york!5e0!3m2!1sde!2sde!4v1717854286721!5m2!1sde!2sde"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </main>
+
+    <footer id="contact">
+      <div>
+        <div class="footer-containers">
+          <h2>Contact</h2>
+          <p>Email: quirwadev@gmail.com</p>
+          <p>Phone: +1234567890</p>
+        </div>
+      </div>
+      <div>
+        <div class="footer-containers">
+          <h2>Address</h2>
+          <p>123 Street Name</p>
+          <p>City, Country</p>
+        </div>
+      </div>
+      <div>
+        <div class="footer-containers">
+          <h2>Opening Hours</h2>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+    </script>
+    <script src="scripts/global.js"></script>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>

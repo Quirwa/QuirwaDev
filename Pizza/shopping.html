@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="shopping.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div class="Top-Container" id="Top-Container">
+      <p class="left lobster" onclick="Top()">Joe's</p>
+      <div class="Top-btn right">
+        <p class="underline p" onclick="openNewTab(`index.html`)">Back</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="products">
+        <div class="product">
+          <img src="images/pizzas/pizza1.png" alt="Pizza 1" />
+          <div class="product-info">
+            <h3>Margherita</h3>
+            <p>
+              A classic delight with fresh tomatoes, basil, and mozzarella
+              cheese.
+            </p>
+            <p>$8.99</p>
+            <button
+              onclick="addToCart('Margherita', 8.99, 'images/pizzas/pizza1.png')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="product">
+          <img src="images/pizzas/pizza2.png" alt="Pizza 2" />
+          <div class="product-info">
+            <h3>Pepperoni</h3>
+            <p>Loaded with pepperoni slices and mozzarella cheese.</p>
+            <p>$9.99</p>
+            <button
+              onclick="addToCart('Pepperoni', 9.99, 'images/pizzas/pizza2.png')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="product">
+            <img src="images/pizzas/pizza3.png" alt="Pizza 2" />
+            <div class="product-info">
+              <h3>Vegetables</h3>
+              <p>Loaded with Vegetables and cheese.</p>
+              <p>$19.99</p>
+              <button
+                onclick="addToCart('Vegetables', 19.99, 'images/pizzas/pizza3.png')"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+      </div>
+      <div class="cart">
+        <h2>Shopping Cart</h2>
+        <ul class="cart-items" id="cart-items"></ul>
+        <div class="cart-total-container">
+          <p class="cart-total">Total: $<span id="total">0.00</span></p>
+          <button onclick="checkout()">Checkout</button>
+        </div>
+      </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="order" id="checkoutSection" style="display: none">
+      <h2>Order Summary</h2>
+      <ul id="checkout-items"></ul>
+      <div class="checkout-total">
+        <p>Total: $<span id="checkout-total"></span></p>
+      </div>
+      <input type="text" id="name" placeholder="Name" />
+      <input type="text" id="phoneNumber" placeholder="Your Phone number" />
+      <input type="email" id="email" placeholder="Your Email" />
+      <textarea id="emailMessage" placeholder="Email Message"></textarea>
+
+      <button onclick="checkouts()">Place Order</button>
+      <button class="cancel-btn" onclick="closeCheckout()">Cancel</button>
+    </div>
+    <footer id="contact" style="margin-top: 750px">
+      <div>
+        <div class="footer-containers">
+          <h2>Contact</h2>
+          <p>Email: quirwadev@gmail.com</p>
+          <p>Phone: +1234567890</p>
+        </div>
+      </div>
+      <div>
+        <div class="footer-containers">
+          <h2>Address</h2>
+          <p>123 Street Name</p>
+          <p>City, Country</p>
+        </div>
+      </div>
+      <div>
+        <div class="footer-containers">
+          <h2>Opening Hours</h2>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+      </div>
+    </footer>
+    <script src="scripts/global.js"></script>
+    <script src="scripts/shopping.js"></script>
+  </body>
+</html>

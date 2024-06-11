@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ash Drawing</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+    />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: rgb(0, 0, 0);
+        width: 100%;
+        font-family: "Roboto", sans-serif;
+        color: #f5f5f5;
+        background-image: url("images/paper3.jpg"); /* Adjust the path to your wood image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      h1,
+      h2 {
+        font-family: "Montserrat", sans-serif;
+      }
+      .header {
+        width: 100%;
+        height: 90vh;
+        position: relative;
+      }
+      .header img {
+        width: 100%;
+        height: 90vh;
+        object-fit: cover;
+        opacity: 0.7;
+      }
+      .header-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: black;
+        z-index: 2;
+        font-size: 2em;
+        font-weight: 700;
+        padding: 20px;
+      }
+      .products {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 100px;
+      }
+      .product {
+        width: 20%;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        color: black;
+        text-align: center;
+      }
+      .product img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+      }
+      .product h2 {
+        font-size: 2em;
+        color: black;
+        margin: 0;
+        font-family: Impact, sans-serif; /* Add Impact font */
+      }
+      .product p {
+        font-size: 1.3em;
+      }
+      main {
+        margin-top: 100px;
+        width: 100%;
+      }
+      .rea {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+      }
+      .rea-text {
+        transform: rotate(5deg);
+        background-image: url("images/paper1.png"); /* Adjust the path to your wood image */
+        background-size: 100% 100%; /* or background-size: cover; */
+        background-repeat: no-repeat;
+        width: 40%;
+        color: black;
+        margin: 5%;
+        text-align: center;
+      }
+      .GreatVibes {
+        font-family: "Great Vibes", cursive;
+      }
+      .font {
+        font-family: "Playfair Display", serif; /* A elegant serif font with a classical feel */
+        /* or */
+        font-family: "arolyna Pro", serif; /* A beautiful script font with a medieval feel */
+        /* or */
+        font-family: "Alex Brush", cursive; /* A elegant calligraphic font with a classical feel */
+      }
+      .rea-text h2,
+      .rea-text p {
+        margin: 0 50px;
+        margin-left: 10%;
+        font-size: 2em;
+      }
+      .rea-text h2 {
+        margin-top: 10%;
+      }
+      .rea-text p {
+        margin-top: 5%;
+      }
+      @media (max-width: 1520px) {
+        .rea-text h2,
+        .rea-text p {
+          font-size: 1.5em;
+        }
+      }
+      @media (max-width: 1180px) {
+        .rea-text h2,
+        .rea-text p {
+          font-size: 1.2em;
+        }
+      }
+      @media (max-width: 840px) {
+        .rea {
+          margin: 0;
+        }
+      }
+      .rea-img {
+        margin-top: 100px;
+        width: 40%;
+        height: 60%;
+        background-image: url("images/paper2.png"); /* Adjust the path to your wood image */
+        background-size: 100% 100%; /* or background-size: cover; */
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .rea img {
+        margin: 10% 0; /* Adjust the margin to 50px */
+        width: 60%;
+        height: auto;
+        position: relative; /* Add position: relative */
+        z-index: 1; /* Add z-index: 1 to ensure the image appears above the background */
+      }
+      .carusel {
+        width: 30%;
+        min-width: 300px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      .carusel-box {
+        width: 100%;
+        min-width: 300px;
+        aspect-ratio: 1 / 1; /* Set the aspect ratio to 1:1 */
+        background-image: url("images/drawing2.png"); /* Adjust the path to your wood image */
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: background-image 0.5s ease; /* Added transition property */
+      }
+      .carusel-circles {
+        margin-top: 10px;
+        width: auto;
+        height: auto;
+        display: flex;
+        gap: 10px;
+      }
+      .circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 100px;
+        background-color: rgb(151, 151, 151);
+        cursor: pointer;
+      }
+      .circle:hover {
+        background-color: #333;
+      }
+      .active-circle {
+        background-color: #333;
+        transform: scale(1.5);
+      }
+      .anime {
+        margin-top: 100px;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .anime-text {
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        border-image: linear-gradient(to top, transparent, rgb(0, 0, 0)) 1 100%;
+        border-top: 1px solid rgb(0, 0, 0);
+        padding: 20px;
+        font-size: 1.5em;
+        text-align: left;
+        color: black;
+        width: 30%;
+        margin: 30px;
+      }
+      .pets {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(0, 0, 0, 0.5);
+      }
+      .pets-text {
+        min-width: 300px;
+        font-size: 1.5em;
+        width: 50%;
+        color: white;
+        text-align: center;
+      }
+      .pets-text h2,
+      .pets-text p {
+        margin-top: 10px;
+        margin: 0 10%;
+      }
+      .pets img {
+        width: 50%;
+        object-fit: cover;
+      }
+      @media (max-width: 1000px) {
+        .product {
+          width: 70vw;
+        }
+        .rea-text {
+          background-size: 100% 150%; /* or background-size: cover; */
+          width: 80vw;
+        }
+        .rea-img {
+          width: 80vw;
+        }
+        .pets-text {
+          width: 100%;
+        }
+        .anime-text {
+          width: 80vw;
+        }
+        .carusel {
+          width: 80vw;
+        }
+        .pets {
+          margin-top: 50px;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .pets img {
+          margin-top: 50px;
+          width: 100%;
+        }
+        
+      .header-text {
+        font-size: 1.5em;
+      }
+      }
+      .pets h2 {
+        margin-top: 15%;
+      }
+      footer {
+        margin-top: 100px;
+        height: 500px;
+        background-image: url("images/spin-pen-976930_1280.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .footer-circle {
+        margin-top: 50px;
+        width: 1000px;
+        height: 1000px;
+        border-radius: 500px;
+        background-color: rgb(0, 0, 0, 0.5);
+        transition: background-color 0.5s ease;
+        display: flex;
+        justify-content: center;
+      }
+      .footer-circle:hover {
+        background-color: rgb(0, 0, 0, 0.8);
+      }
+
+      .footer-text {
+        width: 40%;
+        height: 40%;
+
+        margin-top: 50px;
+        text-align: center;
+        color: white;
+      }
+      .footer-text h2 {
+        margin-bottom: 20px; /* Added margin for spacing */
+        font-size: 2em; /* Increased font size for heading */
+      }
+      .footer-text p {
+        margin: 50px 0; /* Adjusted margin for better spacing */
+      }
+      .footer-text a {
+        color: white;
+      }
+      .socialicon {
+        margin-top: 10px;
+        transition: transform 0.5s ease;
+      }
+      .socialicon:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img src="images/header.jpg" alt="" />
+      <div class="header-text">
+        <h1
+          class="GreatVibes"
+          style="font-size: 3em; text-shadow: 2px 2px 4px #000"
+        >
+          Ash Drawing
+        </h1>
+        <h1
+          class="GreatVibes"
+          style="font-size: 2em; text-shadow: 2px 2px 4px #000"
+        >
+          Unleash Your Imagination
+        </h1>
+      </div>
+    </div>
+    <main>
+      <div class="products">
+        <div class="product">
+          <img src="images/icons/anime.png" alt="" />
+          <h2>Anime</h2>
+          <p>
+            Dive into the vibrant world of anime with our unique artwork,
+            capturing the essence and energy of your favorite characters.
+          </p>
+        </div>
+        <div class="product">
+          <img src="images/icons/cat-1740777_1280.png" alt="" />
+          <h2>Pets</h2>
+          <p>
+            Celebrate your furry friends with custom pet portraits that bring
+            out their personality and charm.
+          </p>
+        </div>
+        <div class="product">
+          <img src="images/icons/nature.png" alt="" />
+          <h2>Nature</h2>
+          <p>
+            Experience the beauty of nature through our detailed drawings,
+            showcasing the tranquility and majesty of the natural world.
+          </p>
+        </div>
+      </div>
+      <div class="rea font">
+        <div class="rea-img">
+          <img src="images/drawing5.jpg" alt="" />
+        </div>
+        <div class="rea-text">
+          <h2>Nature</h2>
+          <p>
+            Our nature-inspired artwork captures the essence of the great
+            outdoors, bringing a touch of serenity to your space.
+          </p>
+        </div>
+      </div>
+      <div class="pets font">
+        <div class="pets-text">
+          <h2>Pets</h2>
+          <p>
+            Custom pet portraits that immortalize your beloved animals,
+            capturing their unique spirit and personality.
+          </p>
+        </div>
+        <img src="images/drawing4.jpg" alt="" />
+      </div>
+      <div class="anime font">
+        <div class="anime-text">
+          <h2>Anime</h2>
+          <p>
+            Our anime artwork brings your favorite characters to life with vivid
+            colors and dynamic compositions.
+          </p>
+        </div>
+        <div class="carusel">
+          <div class="carusel-box"></div>
+          <div class="carusel-circles">
+            <div
+              id="circle1"
+              class="circle"
+              onclick="changeBackgroundImage(`images/drawing2.png`)"
+            ></div>
+            <div
+              class="circle"
+              onclick="changeBackgroundImage(`images/drawing3.png`)"
+            ></div>
+            <div
+              class="circle"
+              onclick="changeBackgroundImage(`images/drawing1.png`)"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-circle">
+        <div class="footer-text">
+          <h2>Get In Touch</h2>
+          <a href="mailto:quirwadev@gmail.com">quirwadev@gmail.com</a>
+          <p>+452 342 234</p>
+          <div class="contact-social">
+            <img
+              src="images/icons/icons8-facebook-48.png"
+              alt="Facebook"
+              class="socialicon"
+            />
+            <img
+              src="images/icons/icons8-instagram-48.png"
+              alt="Instagram"
+              class="socialicon"
+            />
+            <img
+              src="images/icons/icons8-discord-48.png"
+              alt="Discord"
+              class="socialicon"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

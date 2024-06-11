@@ -1,0 +1,31 @@
+footer {
+    color: white;
+    width: 100%;
+    height: auto;
+    background-color: #924f2b;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+  }
+  .footer-containers {
+    margin-top: 20px;
+    width: 200px;
+    height: auto;
+  }
+  footer div {
+    justify-content: center;
+    height: auto;
+  }
+  .footer-containers h2 {
+    border-bottom: 2px solid #fff;
+  }
+  @media (max-width: 700px) {
+
+    footer div {
+      width: 50%;
+    }
+    footer {
+      gap: 30px;
+    }
+  }

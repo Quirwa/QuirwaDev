@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sigma Studio</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap"
+    />
+
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: rgb(0, 0, 0);
+        width: 100%;
+        overflow-x: hidden;
+        font-family: "Roboto", sans-serif;
+        color: #f5f5f5;
+      }
+      h1,
+      h2 {
+        font-family: "Montserrat", sans-serif;
+      }
+      .header {
+        width: 100%;
+        height: 90vh;
+        position: relative;
+      }
+      .header img {
+        width: 100%;
+        height: 90vh;
+        object-fit: cover;
+        opacity: 0.7;
+      }
+      .header-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        z-index: 2;
+        font-size: 2em;
+        font-weight: 700;
+        padding: 20px;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        border-image: linear-gradient(to top, transparent, white) 1 100%;
+        border-top: 1px solid white;
+      }
+      .products {
+        width: 100%;
+        margin-top: 100px;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .Top-Container {
+        width: 100%;
+        height: 70px;
+        position: fixed;
+        z-index: 1000;
+        top: 0px;
+        background-color: rgb(48, 48, 48);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        box-shadow: 0px 2px 5px rgba(134, 134, 134, 0.8);
+      }
+      .Top-Container h1 {
+        color: white;
+        margin-left: 20px;
+      }
+      .showanimation {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s, transform 1s;
+      }
+      .animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .Top-ContainerScroll {
+        opacity: 1;
+      }
+      .hide {
+        opacity: 0;
+      }
+      .bottom-container {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        display: flex;
+        margin-top: 100px;
+        gap: 50px;
+        background-color: white;
+      }
+      .bottom-container img {
+        width: 40%;
+        min-width: 300px;
+        align-self: flex-start;
+        outline: 1px solid black;
+      }
+      .bottom-text h2 {
+        margin: 0;
+      }
+      .bottom-text {
+        font-size: 30px;
+        width: 30%;
+        max-height: 400px;
+        min-width: 300px;
+      }
+      .footer {
+        background: linear-gradient(
+          180deg,
+          #000000,
+          #1c1c1c
+        ); /* Adjust colors as desired */
+        color: #f5f5f5;
+        padding: 40px 20px;
+        text-align: center;
+        background-color: #222;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer h1 {
+        margin-bottom: 20px;
+        font-size: 2em;
+      }
+      .footer a {
+        color: #f5f5f5;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+      .contact-social {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .socialicon {
+        width: 30px;
+        height: 30px;
+        filter: grayscale(100%);
+        transition: filter 0.5s ease, transform 0.5s ease;
+        cursor: pointer;
+        margin: 0 10px;
+      }
+      .socialicon:hover {
+        filter: none;
+        transform: scale(1.5);
+      }
+      main {
+        width: 100%;
+      }
+      .containers {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        height: 310px;
+        width: calc(33.33%);
+        position: relative;
+      }
+
+      .container h2 {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        height: 50px;
+        top: 50%;
+        margin-top: -25px;
+        display: flex;
+        font-size: 2em;
+        align-items: center;
+        color: white;
+        justify-content: center;
+        padding: 10px;
+      }
+      .container img {
+        opacity: 0.5;
+        height: 100%;
+        width: 100%;
+        transition: opacity 0.5s ease;
+        object-fit: cover;
+      }
+
+      .container img:hover {
+        opacity: 0.8;
+      }
+      .location {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .location-text {
+        color: white;
+        text-align: center;
+        width: 50%;
+        position: relative;
+        min-width: 300px;
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+      }
+
+      .location-text h2 {
+        margin-bottom: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+      }
+
+      .location-text p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .location-textbg {
+        position: absolute;
+        background-image: url("images/mixer-4197733_1280.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        z-index: -1;
+      }
+
+      .location iframe {
+        width: 50%;
+        height: 450px;
+        min-width: 300px;
+      }
+
+      .line {
+        height: 1px;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        background-color: rgb(255, 255, 255, 0.5);
+      }
+      .equip {
+        width: 80%;
+        height: auto;
+        margin: 100px auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        color: white;
+      }
+      .equip-box {
+        width: 80%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+      }
+      .equip-img {
+        width: 40%;
+        height: auto;
+        gap: 0;
+        margin: 0;
+      }
+      .equip-img img {
+        min-width: 100px;
+        width: 49%;
+        height: 50%;
+      }
+      .equip-text {
+        font-size: 1.2em;
+        width: 40%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      }
+      @media (max-width: 1222px) {
+        .equip-box {
+          flex-direction: column;
+        }
+        .equip-img {
+          width: 100%;
+        }
+        .equip-text {
+          width: 100%;
+        }
+      }
+      @media (max-width: 768px) {
+        .container h2 {
+          font-size: 1.2em;
+          padding: 5px;
+        }
+        .header-text {
+          font-size: 1.5em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Top-Container" id="Top-Container">
+      <h1>Sigma Studio</h1>
+    </div>
+    <div class="header">
+      <img src="images/berlin-3909613_1920.jpg" alt="" />
+      <div class="header-text">
+        <h1>Siba Studios</h1>
+        <h1>Make Your Voice Heard</h1>
+      </div>
+    </div>
+
+    <main>
+      <div class="containers">
+        <div class="container">
+          <img src="images/mixer-4197733_1280.jpg" alt="" />
+          <h2>Mix & Master</h2>
+        </div>
+        <div class="container">
+          <img src="images/header.jpg" alt="" />
+          <h2>Producing</h2>
+        </div>
+        <div class="container">
+          <img src="images/microphone-7495739_1280.jpg" alt="" />
+          <h2>Recording</h2>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="equip">
+        <h1>Equipment</h1>
+        <div class="equip-box">
+          <div class="equip-img">
+            <img src="images/mixer-4197733_1280.jpg" alt="" />
+            <img src="images/microphone-2885177_1280.jpg" alt="" />
+            <img src="images/mic-1867121_1280.jpg" alt="" />
+            <img src="images/mic-1867121_1280.jpg" alt="" />
+          </div>
+          <div class="equip-text">
+            <p>
+              Quality studio equipment is key for great sound. Invest in good
+              microphones for clear audio, a mixer for precise control, and
+              monitors for accurate playback. A reliable audio interface ties it
+              all together for top-notch recordings.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="line"></div>
+      <div class="location">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.962939032936!2d-73.98658138459075!3d40.73059988809517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2suk!4v1621344690949!5m2!1sen!2suk"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+        <div class="location-text">
+          <div class="location-textbg"></div>
+
+          <h2>Location</h2>
+          <p>The Penthouse</p>
+          <p>723 7th Ave, PH</p>
+          <p>10019</p>
+          <p>New York City</p>
+          <p>NY, USA</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="contact">
+        <h1>Contact</h1>
+        <a href="mailto:quirwadev@gmail.com">quirwadev@gmail.com</a>
+        <div class="contact-social">
+          <img
+            src="images/icons8-facebook-48.png"
+            alt="Facebook"
+            class="socialicon"
+          />
+          <img
+            src="images/icons8-instagram-48.png"
+            alt="Instagram"
+            class="socialicon"
+          />
+          <img
+            src="images/icons8-discord-48.png"
+            alt="Discord"
+            class="socialicon"
+          />
+        </div>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

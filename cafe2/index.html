@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>James Cafe</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Impact:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="global.css" />
+
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        background: linear-gradient(
+          135deg,
+          #3d1f0f,
+          #d0b494
+        ); /* Adjust colors as desired */
+      }
+      .font {
+        font-family: "Great Vibes", cursive;
+      }
+      .header {
+        overflow: hidden;
+        position: relative;
+        height: 100vh;
+      }
+      .header-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: rgb(0, 0, 0);
+        z-index: 2;
+      }
+      .header-text h1 {
+        margin: 0;
+        font-size: 6em;
+        line-height: 1.2;
+      }
+      .imgheader {
+        opacity: 0.8;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .test {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+      }
+      .mg {
+        margin: 5%;
+      }
+      .products {
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5%;
+      }
+
+      .products-bg {
+        padding: 100px;
+        background-image: url("images/olive-wood-364426_1280.jpg"); /* Adjust the path to your wood image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .products-bg h1 {
+        margin: 0;
+      }
+
+      .meal {
+        margin-top: 50px;
+        width: 30%;
+        min-width: 300px;
+        position: relative;
+        transition: transform 0.5s ease;
+      }
+      .meal:hover {
+        transform: scale(1.1);
+      }
+      .meal img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+      .meal-text {
+        cursor: pointer;
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.5s ease;
+      }
+      .meal-text:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .hours {
+        padding: 20px;
+        background-image: url("images/Bildschirmfoto_31-5-2024_165747_media.istockphoto.com.jpeg"); /* Adjust the path to your wood image */
+        background-size: cover;
+        background-position: center;
+        background-position-y: -200px; /* moves the background image 500px up */
+        background-repeat: no-repeat;
+        text-align: center;
+        width: 250px;
+        position: absolute;
+        top: -15px;
+        right: 0;
+        transform: rotate(5deg); /* adds a 5 degree rotation */
+        font-family: "Playfair Display", serif; /* uses an old-style serif font */
+        font-size: 24px;
+        font-style: italic; /* adds an italic font style */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* adds a subtle text shadow */
+        color: #333; /* sets the text color to a dark gray */
+        transition: background-position-y 0.5s ease;
+        z-index: 20;
+      }
+
+      .hours-content {
+        transform: translateY(-500px);
+        transition: transform 0.5s ease;
+        font-size: 20px;
+      }
+
+      .hours.active .hours-content {
+        transform: translateY(0);
+      }
+      .hours h2 {
+        font-size: 30px;
+        padding: 15px 0;
+        margin: 0;
+        cursor: pointer;
+      }
+
+      .hours.active {
+        background-position-y: 0px;
+      }
+
+      @media (max-width: 768px) {
+        .hours {
+          display: none;
+        }
+        
+      .header-text {
+        font-size: .7em;
+      }
+      }
+      .carusel {
+        margin-top: 100px;
+        width: 40%;
+        min-width: 300px;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      .carusel-box {
+        width: 100%;
+        height: 80%;
+        background-image: url("images/header/1.jpg"); /* Adjust the path to your wood image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: background-image 0.5s ease;
+      }
+      .carusel-circles {
+        margin-top: 10px;
+        width: auto;
+        height: auto;
+        display: flex;
+        gap: 10px;
+      }
+      .circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 100px;
+        background-color: rgb(151, 151, 151);
+        cursor: pointer;
+        transition: background-color 0.5s ease, transform 0.5s ease;
+        outline: 0.1px solid rgb(90, 90, 90, 0.5);
+      }
+      .circle:hover {
+        background-color: #333;
+        transform: scale(1.5);
+      }
+      .active-circle {
+        background-color: #333;
+        transform: scale(1.5);
+      }
+      .info {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        background-image: url("images/wood-1846849_1280.jpg"); /* Adjust the path to your wood image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .info-text {
+        text-align: center;
+        width: 40%;
+        min-width: 300px;
+        margin: 0;
+        font-family: Impact, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #333; /* adjust color to your liking */
+      }
+      .info-text h2 {
+        margin: 0;
+        font-size: 3em;
+      }
+      .info-text p {
+        font-family: Impact, sans-serif;
+        font-size: 25px; /* adjust font size for paragraph */
+        font-weight: bold;
+        text-transform: none; /* reset text-transform for paragraph */
+        letter-spacing: 0.5px; /* adjust letter-spacing for paragraph */
+        color: #333; /* adjust color to your liking */
+      }
+
+      @media (max-width: 700px) {
+        .info-text {
+          margin-top: 50px;
+        }
+        .carusel {
+          margin-top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img
+        src="images/header/flour-5290444_1280.jpg"
+        alt=""
+        class="imgheader"
+      />
+      <div class="hours">
+        <h2>Hours</h2>
+        <div class="hours-content">
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+      </div>
+      <div class="header-text font">
+        <h1>James Cafe</h1>
+        <h1>Since 1998</h1>
+      </div>
+    </div>
+
+    <div class="products-bg" id="products">
+      <h1 style="font-size: 5em">Products</h1>
+      <div class="products">
+        <div class="meal">
+          <img src="images/meals/bread-4077812_640.jpg" alt="" />
+          <div class="meal-text font" onclick="openside(`breakfast.html`)">
+            <h1>Breakfast</h1>
+          </div>
+        </div>
+        <div class="meal">
+          <img src="images/meals/food-712665_1280.jpg" alt="" />
+          <div class="meal-text font" onclick="openside(`dinner.html`)">
+            <h1>Dinner</h1>
+          </div>
+        </div>
+        <div class="meal">
+          <img src="images/meals/coffee-3727673_640.jpg" alt="" />
+          <div class="meal-text font" onclick="openside(`cofe.html`)">
+            <h1>Coffee</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="images/tablecloth-111393_1920.jpg" alt="" class="test" />
+
+    <div class="info">
+      <div class="info-text">
+        <h2>About us</h2>
+        <p>
+          Welcome to Cozy Corner Café, your go-to spot for exceptional coffee,
+          delicious homemade food, and a warm, inviting atmosphere. Nestled in
+          New York, we pride ourselves on using fresh, locally sourced
+          ingredients and supporting our community. Join us for a cozy,
+          delightful experience!
+        </p>
+      </div>
+      <div class="carusel">
+        <div class="carusel-box"></div>
+        <div class="carusel-circles">
+          <div
+            id="circle1"
+            class="circle"
+            onclick="changeBackgroundImage(`images/header/1.jpg`)"
+          ></div>
+          <div
+            class="circle"
+            onclick="changeBackgroundImage(`images/cafe-5635015_1280.jpg`)"
+          ></div>
+          <div
+            class="circle"
+            onclick="changeBackgroundImage(`images/header/2.jpg`)"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div>
+        <div class="footer-containers">
+          <h2>Contact</h2>
+          <p>Email: quirwadev@gmail.com</p>
+          <p>Phone: +1234567890</p>
+        </div>
+      </div>
+      <div>
+        <div class="footer-containers">
+          <h2>Address</h2>
+          <p>123 Street Name</p>
+          <p>City, Country</p>
+        </div>
+      </div>
+      <div>
+        <div class="footer-containers">
+          <h2>Opening Hours</h2>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

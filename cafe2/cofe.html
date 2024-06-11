@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="global.css" />
+  </head>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    .mg {
+      margin: 5%;
+    }
+    .products {
+      margin-top: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5%;
+    }
+
+    .products-bg {
+      padding: 100px;
+      background-image: url("images/olive-wood-364426_1280.jpg"); /* Adjust the path to your wood image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .products-bg h1 {
+      margin: 0;
+    }
+
+    .meal {
+      margin-top: 50px;
+      width: 30%;
+      min-width: 300px;
+      position: relative;
+      transition: transform 0.5s ease;
+    }
+    .meal:hover {
+      transform: scale(1.1);
+    }
+    .meal img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .meal-text {
+      position: absolute;
+      width: 100%;
+      height: 50px;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.5s ease;
+    }
+    .meal-text:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+  <body>
+    <div class="products-bg" id="products">
+      <h1 style="font-size: 5em">Coffes</h1>
+      <div class="products">
+        <div class="meal">
+          <img src="images/meals/coffe-2400874_1280.jpg" alt="" />
+          <div class="meal-text font">
+            <h1>Breakfast</h1>
+          </div>
+        </div>
+        <div class="meal">
+          <img src="images/meals/espresso-4992122_1280.jpg" alt="" />
+          <div class="meal-text font">
+            <h1>Dinner</h1>
+          </div>
+        </div>
+        <div class="meal">
+          <img src="images/meals/coffee-3727673_640.jpg" alt="" />
+          <div class="meal-text font">
+            <h1>Coffee</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div>
+        <div class="footer-containers">
+          <h2>Contact</h2>
+          <p>Email: example@gmail.com</p>
+          <p>Phone: +1234567890</p>
+        </div>
+      </div>
+      <div>
+        <div class="footer-containers">
+          <h2>Address</h2>
+          <p>123 Street Name</p>
+          <p>City, Country</p>
+        </div>
+      </div>
+      <div>
+        <div class="footer-containers">
+          <h2>Opening Hours</h2>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
